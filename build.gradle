@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'guru.qa'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter:5.8.1', //чтобы не заморачиваться с парамс и апи, просто подрубаем всю библиотеку
+            'com.google.guava:guava:31.1-jre', //библиотека доп методов от гугла
+            'com.codeborne:selenide:6.7.1'
+    )
+//    testImplementation ('org.junit.jupiter:junit-jupiter-api:5.8.1',
+//            'org.junit.jupiter:junit-jupiter-params:5.8.1') //для параметризованных тестов
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1' //убрали, т.к. подключили просто весь юпитер
+}
+
+test {
+    useJUnitPlatform()
+}
